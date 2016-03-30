@@ -21,9 +21,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', 'blog.views.index'),
-    url(r'^add/(?P<x>\d+)/(?P<y>\d+)/$', 'blog.views.add'),
-    url(r'^hello/(?P<name>[a-zA-Z]+)/$', 'blog.views.hello'),
-    url(r'^archives/(?P<year>\d{4})/(?P<month>\d{1,2})/(?P<day>\d{1,2})/', 'blog.views.archives')
+    url(r'^(?P<pk>\d+)/$', 'blog.views.post_detail'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
