@@ -21,7 +21,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', 'blog.views.index'),
-    url(r'^(?P<pk>\d+)/$', 'blog.views.post_detail'),
+    url(r'^(?P<pk>\d+)/$', 'blog.views.post_detail', name='post_detail'),
     url(r'^new/$', 'blog.views.post_new'),
 ]
 

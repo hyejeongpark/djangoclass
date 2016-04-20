@@ -17,7 +17,7 @@
     {% for post in post_list %}
       <li>
         {# url reverse #}
-        <a href="{% url "blog.views.post_detail" post.pk %}">
+        <a href="{% url "post_detail" post.pk %}">
           {{ post.title }}
         </a>
       </li>
