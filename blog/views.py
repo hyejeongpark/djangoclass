@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+# from django.views.generic import CreateView
+from django.shortcuts import redirect
 from .models import Post
 from .forms import PostForm
 
@@ -28,3 +30,6 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'blog/post_form.html', {'form': form,})
+
+
+# post_new = CreateView.as_view(model=Post, form_class=PostForm)
