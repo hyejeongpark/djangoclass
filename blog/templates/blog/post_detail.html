@@ -11,6 +11,15 @@
     <p>My blog</p>
     <hr/>
   </header>
+
+  {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+      {{ message }}
+    </div>
+    {% endfor %}
+  {% endif %}
+
   <div class="container">
     <h1>{{ post.title }}</h1>
     <img src="{{ post.photo.url }}" width="300px"/>

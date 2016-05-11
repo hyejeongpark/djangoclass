@@ -1,9 +1,11 @@
 
 from django.http import HttpResponse, Http404
+from django.contrib import messages
 # from django.views.generic import CreateView
 from django.shortcuts import redirect, render, get_object_or_404
 from .models import Post
 from .forms import PostForm, CommentForm
+
 
 def index(request):
     post_list = Post.objects.all()
@@ -26,6 +28,7 @@ def post_new(request):
             # return redirect(post.get_absolute_url())
 
             # 방법 3)
+            messages.success(request, '새로운 포스팅을 등록했습니다.')
             return redirect(post)
     else:
         form = PostForm()
